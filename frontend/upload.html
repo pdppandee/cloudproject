@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Upload</title>
+</head>
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <form enctype="multipart/form-data" >
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label text-white" for="files"> Upload Photo! :-) </label>
+                        <input class="form-control" id="image" type="file" />
+                        
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="id-submitbtn col-md-4 offset-md-4">
+                        <!-- <button id="upload-submit" onclick="upload(image)" value="Upload" class="btn btn-primary btn-lg">Submit</button> -->
+                        <input 
+                        class="btn btn-outline-light btn-lg px-5 container" 
+                        type="submit" 
+                        value="Upload" 
+                        id="upload-submit"
+                        onclick="upload(image)"/>
+                        
+                    </div>
+                </div>
+            </form>
+            <br>
+            <br>
+           
+        <div class="row">
+            <!-- <div class="col-md-4 offset-md-4" >
+                <button onclick="submitpic()" type="button" class="btn btn-outline-light btn-lg px-5 container">Submit</button>
+            </div> -->
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-4 offset-md-4" >
+
+                <a class="btn btn-outline-light btn-lg px-5 container" role="button" href="index.html">Logout</a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="./upload.js"></script>
+</body>
+</html>
