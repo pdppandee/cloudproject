@@ -50,9 +50,9 @@ async function upload(file){
 
 async function postapi(url, data) {
     console.log(data);
-    const response = await fetch(url, {
-        method: 'POST',
-        body: data.content,
+    const response = await fetch("https://g62ukvya60.execute-api.us-east-1.amazonaws.com/submit", {
+        method: 'PUT',
+        body: JSON.stringify({"userID":"test","name":"aaa"}),
         header: {
             'Content-Type': 'multipart/form-data'
         }
