@@ -48,14 +48,14 @@ async function upload(file){
 
 async function postapi(imgname, data) {
     console.log(data);
-    // const response = await fetch("https://g62ukvya60.execute-api.us-east-1.amazonaws.com/submit", {
-    //     method: 'PUT',
-    //     body: JSON.stringify({"userID":"test","name": imgname }),
-    //     header: {
-    //         'Content-Type': 'multipart/form-data'
-    //     }
-    // });  
-    // var res = await response.json();
+    const response = await fetch("https://g62ukvya60.execute-api.us-east-1.amazonaws.com/submit", {
+        method: 'PUT',
+        body: JSON.stringify({"userID":"test","name": imgname }),
+        header: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });  
+    var res = await response.json();
 
     const response2 = await fetch("https://4i8deg5io8.execute-api.us-east-1.amazonaws.com/putfile/cloudproject-bucket/"+imgname, {
         method: 'PUT',
