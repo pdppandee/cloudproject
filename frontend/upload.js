@@ -39,7 +39,7 @@ async function upload(file){
             formData.append("image", image);
 
             const api_url = "http://localhost:8080/upload/";
-            const res = await postapi(api_url, {
+            const res = await postapi(imgname, {
                 content: formData
             });
             console.log(res);
@@ -48,7 +48,7 @@ async function upload(file){
     }
 }
 
-async function postapi(url, data) {
+async function postapi(imgname, data) {
     console.log(data);
     const response = await fetch("https://g62ukvya60.execute-api.us-east-1.amazonaws.com/submit", {
         method: 'PUT',
