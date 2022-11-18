@@ -6,7 +6,7 @@ async function upload(file){
     const comp = this;
     console.log(`fn is running with ${file.files[0]}`);
     var image = file.files[0];
-
+    var imgname = image.name;
     var img = new Image();
 
     img.src = window.URL.createObjectURL(image);
@@ -52,12 +52,22 @@ async function postapi(url, data) {
     console.log(data);
     const response = await fetch("https://g62ukvya60.execute-api.us-east-1.amazonaws.com/submit", {
         method: 'PUT',
-        body: JSON.stringify({"userID":"test","name":"aaa"}),
+        body: JSON.stringify({"userID":"test","name": imgname }),
         header: {
             'Content-Type': 'multipart/form-data'
         }
     });  
     var res = await response.json();
+
+    const response2 = await fetch("https://4i8deg5io8.execute-api.us-east-1.amazonaws.com/putfile/cloudproject-bucket/"+imgname, {
+        method: 'PUT',
+        body: data,
+        header: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });  
+    var res2 = await response2.json();
+
 
     return res
 }
