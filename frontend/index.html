@@ -31,13 +31,24 @@
                     method: 'PUT',
                     body: JSON.stringify({"userID": JSON.parse(xhr.responseText).email ,"data": JSON.parse(xhr.responseText) })
                     })
-                    localStorage.setItem("userID", JSON.parse(xhr.responseText).email )
+                    fetch('https://g62ukvya60.execute-api.us-east-1.amazonaws.com/users', {
+                        method: 'PUT',
+                        body: JSON.stringify({"userID": JSON.parse(xhr.responseText).email ,"data": JSON.parse(xhr.responseText) })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            localStorage.setItem("userID", JSON.parse(xhr.responseText).email )
+                            window.location.href = "./upload.html";
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
                 };
                 xhr.send('idtoken=' + id_token);
 
                 
                 //change the page with the user info
-                window.location.href = "./upload.html";
+             
                 
 
             }
