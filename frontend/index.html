@@ -31,6 +31,7 @@
                     method: 'PUT',
                     body: JSON.stringify({"userID": JSON.parse(xhr.responseText).email ,"data": JSON.parse(xhr.responseText) })
                     })
+                    localStorage.setItem("userID", JSON.parse(xhr.responseText).email )
                 };
                 xhr.send('idtoken=' + id_token);
 

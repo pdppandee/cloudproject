@@ -48,9 +48,10 @@ async function upload(file){
 
 async function postapi(imgname, data) {
     console.log(data);
+    let email = localStorage.getItem("userID");
     const response = await fetch("https://g62ukvya60.execute-api.us-east-1.amazonaws.com/submit", {
         method: 'PUT',
-        body: JSON.stringify({"userID":"test","name": imgname }),
+        body: JSON.stringify({"userID": email,"name": imgname }),
         header: {
             'Content-Type': 'multipart/form-data'
         }
